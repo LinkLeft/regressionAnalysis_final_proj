@@ -38,3 +38,7 @@ class DrawFigures:
                 g = sns.pairplot(df_train[features], hue='y')
                 g.fig.suptitle(title)
                 plt.show
+
+
+if __name__ == "main":
+    print("wwwwwww")

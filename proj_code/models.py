@@ -19,3 +19,9 @@ class Models:
         y_test_pred = LR_model.predict(self.X_test)
 
         report = classification_report(self.y_train, y_train_pred)
+
+        return y_test_pred, report
+        
+
+if __name__ == "main":
+    print("wwwwwww")
