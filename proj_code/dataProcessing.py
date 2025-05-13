@@ -74,7 +74,13 @@ class DataProcessing:
     
 
 # 生成csv结果文件
-def createSolution(X_test, y_pred, name='solution'):
+def createSolution(X_test: pd.DataFrame, y_pred, name='solution'):
+    # 创建一个包含id和y_pred的DataFrame
+    solution_df = pd.DataFrame({'id': X_test.index, 'y': y_pred})
+    
+    # 将DataFrame导出为CSV文件
+    solution_df.to_csv(f'{name}.csv', index=False)
+    print(f"Solution file '{name}.csv' has been created.")
     return None
 
 if __name__ == "main":
