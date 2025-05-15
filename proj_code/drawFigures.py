@@ -2,13 +2,19 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
 
 class DrawFigures:
-    def __init__(self):
+    def __init__(self, df_train, X_train):
+        self.df_train = df_train
+        self.X_train = X_train
         pass
 
     # 按pdf文件中的分组对自变量作图，观察每组中自变量间关系
-    def drawAll(self, df_train, X_train):
+    def drawAll(self):
+        df_train = self.df_train
+        X_train = self.X_train
+
         feature_columns = [col for col in X_train.columns if col.startswith('X')]
         # print(feature_columns)
         feature_dict = {}
@@ -23,8 +29,24 @@ class DrawFigures:
         # sns.pairplot(df_train[], hue='y')
         # plt.show()
 
+    # 对两个自变量作出PCA线
+    def drawPca_pair(self, X1: str ='X1', X2: str ='X2'):
+        data_X1 = self.X_train[X1]
+        data_X2 = self.X_train[X2]
+
+        # Combine x1 and x2 into a single dataset
+        
+        # fit PCA
+        
+        
+
+        return None
+
     # 选取两个自变量，作图并观察其间关系
-    def drawPair(self, df_train, X_train):
+    def drawPair(self):
+        df_train = self.df_train
+        X_train = self.X_train
+
         feature_columns = [col for col in X_train.columns if col.startswith('X')]
 
         # length = len(feature_columns)
