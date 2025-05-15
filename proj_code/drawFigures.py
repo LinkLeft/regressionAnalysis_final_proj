@@ -5,9 +5,10 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 
 class DrawFigures:
-    def __init__(self, df_train, X_train):
+    def __init__(self, df_train, X_train, y_train):
         self.df_train = df_train
         self.X_train = X_train
+        self.y_train = y_train
         pass
 
     # 按pdf文件中的分组对自变量作图，观察每组中自变量间关系
