@@ -3,10 +3,11 @@ from sklearn.linear_model import LogisticRegression, LinearRegression
 import statsmodels.api as sm
 
 class Models:
-    def __init__(self, X_train, y_train, X_test):
+    def __init__(self, X_train, y_train, X_test, df_train):
         self.X_train = X_train
         self.y_train = y_train
         self.X_test = X_test
+        self.df_train = df_train
     
     def trainLR(self, summary='yes'):
         # 直接进行多元线性回归
